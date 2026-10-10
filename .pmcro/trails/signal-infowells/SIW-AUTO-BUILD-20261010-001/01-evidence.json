@@ -3,37 +3,41 @@
   "repository": "https://github.com/ty333martinez-auto/signal-infowells",
   "branch": "feature/autonomous-build-cycle-001",
   "base_commit": "5c3abb59034c8dd65baf8822fcdd5dc04c17082c",
-  "head_commit": "869ec0b42aa3b89004d0d8de1a52d6c05f038932",
+  "tested_head_commit": "0f3f7bb08c59792edb61d23085e3958c44efbbbc",
   "pull_request": 3,
   "workflow": {
     "name": "Framework and marketplace integrity",
-    "run_id": 38036256059,
+    "run_id": 38036631098,
     "status": "completed",
     "conclusion": "success",
-    "url": "https://github.com/ty333martinez-auto/signal-infowells/actions/runs/38036256059"
+    "url": "https://github.com/ty333martinez-auto/signal-infowells/actions/runs/38036631098"
   },
   "tests": {
-    "ran": 13,
-    "passed": 13,
+    "ran": 21,
+    "passed": 21,
     "failed": 0,
     "commands": [
       "python -m unittest discover -s tests -v",
       "python tools/validate_marketplace.py"
     ],
-    "marketplace_integrity": "PASS"
+    "marketplace_integrity": "PASS",
+    "public_documentation_integrity": "PASS"
   },
   "changes": [
     "Added marketplace loader and bounded build-cycle/promotion gate runtime.",
-    "Added siw-autonomous-build skill, manifest, marketplace registration, and capability config.",
-    "Documented automated cycle approval versus independent validation and command-gated promotion.",
-    "Added unit tests and GitHub Actions workflow.",
-    "Updated README, activation prompt, and HANDOFF."
+    "Added siw-autonomous-build capability and promotion gate.",
+    "Added siw-capcut-intent task generator, schema, portable prompt, manifest, and marketplace registration.",
+    "CapCut intent is emitted only for video-production/editing tasks and writes to .pmcro/tasks/capcut/.",
+    "Updated public docs/index.html to explain six reasoning pillars, continuous unresolved Recognition, operational marketplace distinction, and CapCut handoff.",
+    "Updated README, activation prompt, and handoff documentation.",
+    "Added tests and CI checks to detect public documentation drift."
   ],
   "limitations": [
-    "Tests establish code behavior and repository/catalog integrity only, not real-world reasoning efficacy.",
+    "Tests establish code behavior and repository/documentation integrity only, not real-world reasoning efficacy.",
     "No independent reviewer has approved the PR.",
     "PR remains open and unmerged.",
-    "This cycle gate evaluates eligibility; it does not itself commit, push, or merge."
+    "CapCut intent generation is a handoff; no video export was produced in this run.",
+    "GitHub Pages deployment of docs/index.html occurs from main, so these docs changes are not live until PR promotion."
   ],
   "status": "NOT-YET-VERIFIED"
 }
