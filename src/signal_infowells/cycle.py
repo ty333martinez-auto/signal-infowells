@@ -47,7 +47,7 @@ def assess_cycle(*, checks: Mapping[str, bool], evidence_digest: str,
     approved = not blockers
     return CycleAssessment(
         cycle_approved=approved,
-        status="NOT-YET-VERIFIED" if approved else "NOT-RUN",
+        status="NOT-YET-VERIFIED",
         blockers=tuple(blockers),
         promotion_authorized=False,
     )
