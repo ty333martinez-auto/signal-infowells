@@ -1,0 +1,66 @@
+{
+  "run_id": "SIW-ACT-20261010-001",
+  "task_digest": "86f57b8584be436d3997d4b25b46fecd4bf48f85a43e2c91975ebfe3d980edd3",
+  "base_commit": "8b5d6011b30f6916fcac1a396adb3d0045ad66bf",
+  "read_files": [
+    "AGENTS.md",
+    "HANDOFF.md",
+    "marketplace.json",
+    ".infowells/governance/invariants.md",
+    ".infowells/protocols/bounded_recursive_execution.md",
+    ".infowells/registry/run_registry.schema.json"
+  ],
+  "skill_files_read": [
+    "plugins/siw-baseline/SKILL.md",
+    "plugins/siw-echo/SKILL.md",
+    "plugins/siw-evidence/SKILL.md",
+    "plugins/siw-execution/SKILL.md",
+    "plugins/siw-provenance/SKILL.md",
+    "plugins/siw-recognition/SKILL.md",
+    "plugins/siw-refine/SKILL.md",
+    "plugins/siw-run-record/SKILL.md",
+    "plugins/siw-signal/SKILL.md",
+    "plugins/siw-status/SKILL.md",
+    "plugins/siw-task-digest/SKILL.md",
+    "plugins/siw-validation/SKILL.md"
+  ],
+  "status": "NOT-YET-VERIFIED",
+  "depth_reached": 1,
+  "iterations_used": 1,
+  "steps_used": 8,
+  "smoke_test": {
+    "capability": "siw-echo",
+    "result": "Task text echoed into this activation trail; dispatch/scaffold path checked by applying SKILL.md instructions.",
+    "status": "NOT-YET-VERIFIED"
+  },
+  "skill_application": {
+    "applied": [
+      "siw-signal",
+      "siw-recognition",
+      "siw-task-digest",
+      "siw-echo",
+      "siw-execution",
+      "siw-evidence",
+      "siw-provenance",
+      "siw-status",
+      "siw-validation",
+      "siw-run-record"
+    ],
+    "read_but_not_run": [
+      "siw-baseline",
+      "siw-refine"
+    ]
+  },
+  "validation": {
+    "independent_validation_present": false,
+    "evidence_digest_and_provenance_present": true,
+    "promotion_allowed": false
+  },
+  "unresolved_questions": [
+    "GitHub connector access retrieved skill definitions but did not execute repository code or CI.",
+    "Independent validation by a separate actor/path has not occurred.",
+    "No external real-world efficacy evidence exists in this run.",
+    "No baseline digest was supplied, so baseline comparison was not run.",
+    "Recognition remains continuous and unresolved."
+  ]
+}
