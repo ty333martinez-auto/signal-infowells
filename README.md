@@ -37,6 +37,16 @@ Recognition remains continuous and unresolved. The operational marketplace layer
 
 The canonical catalog is `marketplace.json`. Each capability has a `plugins/<name>/SKILL.md` and a manifest. The autonomous-build capability is `siw-autonomous-build`.
 
+### CapCut intent handoff
+
+When a task requires video creation/editing, `siw-capcut-intent` creates a portable task brief under `.pmcro/tasks/capcut/<task_id>.json`. It includes a portable execution prompt for another AI or a CapCut operator, source-asset references, script/style/edit requirements, export settings, acceptance checks, provenance, and unresolved questions. Unknowns remain explicit rather than invented. This is a handoff intent, not a completed video.
+
+Create one from task JSON with `python tools/create_capcut_intent.py path/to/task.json`. The task JSON should include `objective` or `task_text`; optional fields are defined in `schemas/capcut_intent.schema.json`. The tool emits a task only for a clear video-production signal.
+
+## Framework learning guide
+
+The reasoning core is Awareness → Six Pillars ↔ Recognition → Action → Experience → Reflection → Awareness. The six pillars are Perception, Imagination, Empathy, Introspection, Emotion, and Reason. Operational marketplace capabilities support the core but do not replace the pillars. Recognition remains continuous and unresolved; the distinctness question is still open. See [the public guide](docs/index.html), [framework handoff](HANDOFF.md), and [activation prompt](ACTIVATION.md).
+
 ## Development checks
 
 Run the dependency-free test suite and marketplace integrity gate:
