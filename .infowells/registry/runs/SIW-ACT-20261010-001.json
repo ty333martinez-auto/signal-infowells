@@ -1,0 +1,38 @@
+{
+  "run_id": "SIW-ACT-20261010-001",
+  "timestamp": "2026-10-10T07:44:00Z",
+  "task_digest": "86f57b8584be436d3997d4b25b46fecd4bf48f85a43e2c91975ebfe3d980edd3",
+  "status": "NOT-YET-VERIFIED",
+  "depth_reached": 1,
+  "iterations_used": 1,
+  "steps_used": 8,
+  "halt_reason": null,
+  "evidence_digests": [
+    "20cfc747afe8b0a1ff2e18189446bd2264ec7514cfec435ac022dbb248feff05"
+  ],
+  "provenance": {
+    "agent_id": "chatgpt-siw-activation-agent",
+    "capability_ids": [
+      "siw-signal",
+      "siw-recognition",
+      "siw-task-digest",
+      "siw-echo",
+      "siw-execution",
+      "siw-evidence",
+      "siw-provenance",
+      "siw-status",
+      "siw-validation",
+      "siw-run-record"
+    ],
+    "parent_run_id": null,
+    "git_commit": "8b5d6011b30f6916fcac1a396adb3d0045ad66bf"
+  },
+  "unresolved_questions": [
+    "GitHub connector access retrieved skill definitions but did not execute repository code or CI.",
+    "Independent validation by a separate actor/path has not occurred.",
+    "No external real-world efficacy evidence exists in this run.",
+    "No baseline digest was supplied, so baseline comparison was not run.",
+    "Recognition remains continuous and unresolved."
+  ],
+  "notes": "Skill procedures were applied manually from repository SKILL.md files through the GitHub connector. No repository code or CI was executed. The run is recorded but not independently validated; no promotion."
+}
