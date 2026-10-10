@@ -94,6 +94,18 @@ def validate_marketplace(root: Path) -> list[str]:
             manifest = _json(manifest_path, errors)
             if isinstance(manifest, dict) and (manifest.get("name") != name or manifest.get("framework") != "signal-infowells"):
                 errors.append(f"{manifest_path}: name/framework mismatch")
+    docs_path = root / "docs" / "index.html"
+    try:
+        docs = docs_path.read_text(encoding="utf-8")
+        for phrase in ("Perception", "Imagination", "Empathy", "Introspection", "Emotion", "Reason",
+                       "Recognition", "siw-capcut-intent", ".pmcro/tasks/capcut/"):
+            if phrase not in docs:
+                errors.append(f"{docs_path}: public framework docs missing required concept {phrase!r}")
+        if "Twelve plugins" in docs or "Twelve plugins." in docs:
+            errors.append(f"{docs_path}: stale marketplace capability count")
+    except OSError as exc:
+        errors.append(f"{docs_path}: public framework docs missing or unreadable ({exc})")
+
     schema_path = root / ".infowells" / "registry" / "run_registry.schema.json"
     schema = _json(schema_path, errors)
     if isinstance(schema, dict):
