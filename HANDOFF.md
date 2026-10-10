@@ -29,6 +29,13 @@ Automated cycle approval permits continuation when required gates pass. It is no
 ## Bounds
 Depth <= 4; iterations <= 8; total steps <= 32; wall time <= 300 seconds. Do not increase without governance change and independent review.
 
+## Public documentation and learning
+- Public GitHub Pages guide: `docs/index.html` (deployed from the `/docs` directory on `main`).
+- Framework activation prompt: `ACTIVATION.md`.
+- Architecture handoff: this file.
+- Keep the docs aligned with the actual six reasoning pillars, marketplace capability count, invariants, current status, and available activation paths.
+- For video tasks, `siw-capcut-intent` writes portable PMCR-O task records to `.pmcro/tasks/capcut/` for another AI/operator. Intent is not a rendered export.
+
 ## Current work
 - Working branch: feature/autonomous-build-cycle-001
 - Added bounded cycle gate, marketplace loader, autonomous-build skill/manifest, protocol, catalog registration, tests, and CI workflow.
