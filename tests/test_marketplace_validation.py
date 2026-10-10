@@ -22,6 +22,8 @@ class MarketplaceValidationTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         (self.root / "plugins" / "demo").mkdir(parents=True)
         (self.root / ".infowells" / "registry").mkdir(parents=True)
+        (self.root / "docs").mkdir(parents=True)
+        (self.root / "docs/index.html").write_text("Perception Imagination Empathy Introspection Emotion Reason Recognition siw-capcut-intent .pmcro/tasks/capcut/", encoding="utf-8")
         self.write_json("marketplace.json", {
             "framework": "signal-infowells", "invariants": INVARIANTS,
             "plugins": [{"name": "demo", "source": "./plugins/demo"}],
