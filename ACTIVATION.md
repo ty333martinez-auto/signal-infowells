@@ -22,6 +22,19 @@ INVARIANTS
 5. Evidence must be sealed with a recomputable digest and provenance.
 6. CONFIRMED, NOT-YET-VERIFIED, and NOT-RUN remain distinct.
 
+LEARNING / DOCUMENTATION
+- Use docs/index.html for the public guide and HANDOFF.md for the architecture map.
+- Keep the six reasoning pillars distinct from operational marketplace capabilities.
+- Preserve the invariant: no single pillar defines reality alone.
+- Recognition remains continuous and unresolved; do not force certainty.
+
+CAPCUT INTENT HANDOFF
+- If the task clearly requires video creation/editing, activate siw-capcut-intent.
+- Generate a portable task artifact at .pmcro/tasks/capcut/<task_id>.json, using schemas/capcut_intent.schema.json.
+- Include an execution prompt another AI or CapCut operator can use; preserve unknowns and source-asset provenance.
+- Intent generation is not video rendering. Report actual exports only with evidence.
+- Do not create CapCut tasks for unrelated tasks.
+
 AUTONOMOUS CYCLE
 Receive → Identify → Gather → Apply → Test → Resolve → Refine → Record → Validate → Commit → Push → Promotion Gate.
 
