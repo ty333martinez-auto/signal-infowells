@@ -1,0 +1,135 @@
+================================================================================
+Signal InfoWells — PMCR-O Source Review Handoff (TXT)
+================================================================================
+Status of this artifact: NOT-YET-VERIFIED (assembled from accessible repo state
+and user-supplied links; shared chat bodies were NOT retrieved by the agent)
+Date: 2026-10-10
+Subject: signal-infowells
+Purpose: One file a PMCR-O / coding agent can open from a URL and use to
+         collect errors, compare sources, and continue work without inventing
+         evidence.
+
+--------------------------------------------------------------------------------
+1. SOURCE INVENTORY
+--------------------------------------------------------------------------------
+
+A. Independent SIW framework (skills/plugins marketplace — preferred current)
+   https://github.com/ty333martinez-auto/signal-infowells
+   - marketplace.json (12 plugins)
+   - plugins/*/SKILL.md + manifest.json
+   - ACTIVATION.md, AGENTS.md, HANDOFF.md
+   - .infowells/ governance
+   - .pmcro/ trail interface
+   - docs/index.html (dark Pages landing)
+   - prompts/capcut_facebook_reel.md
+
+B. PMCR-O template host (earlier product path + handoff)
+   https://github.com/ty333martinez-auto/pmcro-template
+   - products/signal-inforwells-pmcro/  (note spelling: inforwells)
+   - docs/signal-inforwells/
+   - .pmcro/handoffs/signal-inforwells/
+   - .github/workflows/test-signal-inforwells.yml
+   - .github/workflows/pages-signal-inforwells.yml
+
+C. Shared conversations (CONTENT NOT RETRIEVED by agent tools)
+   Claude:   https://claude.ai/share/4ccd3374-c49b-495b-816f-e5d6bc2c3532
+   ChatGPT:  https://chatgpt.com/s/cx_6ac9dad757708191a1ab51f16dd6a341
+   Access limitation only — not proof links are broken. Record as UNKNOWN until
+   a human or authorized browser inspects them. Do not invent their contents.
+
+D. Social / design signal (Facebook — not content-verified as specification)
+   User public post referenced: SIGNAL INFORWELLS DESIGNS / MORE COMING
+   Treat as design interest signal only, not framework contract.
+
+E. Expected Pages URLs (enable Pages before claiming live)
+   SIW: https://ty333martinez-auto.github.io/signal-infowells/
+        Settings → Pages → main → /docs
+   pmcro-template: https://ty333martinez-auto.github.io/pmcro-template/
+        requires Actions Pages source enabled
+
+--------------------------------------------------------------------------------
+2. FRAMEWORK IDENTITY (DO NOT COLLAPSE)
+--------------------------------------------------------------------------------
+
+TWO parallel expressions — keep distinct:
+
+1) signal-infowells (independent activation marketplace)
+   - Skills/plugins (SKILL.md), not a Python package
+   - Pillars: Signal, Recognition, Evidence, Execution, Validation, Provenance
+   - Status: CONFIRMED | NOT-YET-VERIFIED | NOT-RUN
+   - Not subordinated to PMCR-O
+
+2) signal-inforwells-pmcro (product under pmcro-template)
+   - Earlier scaffold with tests / baseline harness
+   - Philosophical pillars in older handoff: Perception, Imagination, Empathy,
+     Introspection, Emotion, Reason
+   - Recognition states: Know / Believe / Suspect / Don't Know Yet
+   - Test 6 Recognition gap remains open — do not silently close
+
+Protected rules:
+  - No single pillar defines reality alone
+  - Recognition continuous / unresolved where stated
+  - Software success ≠ real-world outcome improvement
+  - Promotion requires independent validation
+
+--------------------------------------------------------------------------------
+3. CAPCUT FACEBOOK REEL PROMPT
+--------------------------------------------------------------------------------
+
+Target: 15–30s · Facebook Reel · dark teal
+
+Create a 20-second professional Facebook Reel introducing Signal InfoWells.
+Visual style: deep teal/dark cyan, clean UI, soft glow, calm pacing.
+
+Sequence:
+1. (0–3s) Title Signal InfoWells / Independent Activation Framework
+2. (3–8s) Six pillars nodes + caption no single pillar defines reality alone
+3. (8–14s) Lifecycle Receive→…→Validate + bounded execution caption
+4. (14–18s) CONFIRMED / NOT-YET-VERIFIED / NOT-RUN tags
+5. (18–20s) Experimental; tests do not prove real-world outcomes
+
+Voiceover: independent activation framework; Recognition continuous; sealed
+evidence; independent validation before promotion.
+
+Checklist: teal palette, pillars readable, lifecycle ordered, status distinct,
+no efficacy claim, Recognition open, 1080x1920, 15–30s, experimental frame.
+
+Full file: prompts/capcut_facebook_reel.md in signal-infowells repo.
+Do not claim CapCut was run without evidence.
+
+--------------------------------------------------------------------------------
+4. ERROR REGISTRY SEED
+--------------------------------------------------------------------------------
+
+F-001 Naming drift (InfoWells vs Inforwells) — Confirmed medium
+F-002 Shared chat bodies inaccessible to tools — Unknown/info
+F-003 Pages may not be live — Suspected until HTTP verified
+F-004 Dual pillar models — Confirmed dual description; high if silently merged
+F-005 Issues disabled on pmcro-template — Confirmed info; use file handoffs
+
+For each new finding: ID, severity, classification, source, evidence,
+reproduction, expected, observed, impact, fix hypothesis, validation, unknowns.
+
+--------------------------------------------------------------------------------
+5. REVIEW SEQUENCE
+--------------------------------------------------------------------------------
+Receive → Identify → Gather → Apply → Test → Resolve → Refine (≤3) → Record
+Maker must not be sole Checker. Record unresolved gaps.
+
+--------------------------------------------------------------------------------
+6. QUICK URLS
+--------------------------------------------------------------------------------
+https://github.com/ty333martinez-auto/signal-infowells
+https://github.com/ty333martinez-auto/signal-infowells/blob/main/ACTIVATION.md
+https://github.com/ty333martinez-auto/signal-infowells/blob/main/.pmcro/handoffs/signal-infowells/PMCR-O-SOURCE-REVIEW-HANDOFF.txt
+https://github.com/ty333martinez-auto/pmcro-template/tree/master/.pmcro/handoffs/signal-inforwells
+https://github.com/ty333martinez-auto/pmcro-template/blob/master/.pmcro/handoffs/signal-inforwells/GENERATE_AGENTS.md
+https://claude.ai/share/4ccd3374-c49b-495b-816f-e5d6bc2c3532
+https://chatgpt.com/s/cx_6ac9dad757708191a1ab51f16dd6a341
+
+--------------------------------------------------------------------------------
+7. HONESTY
+--------------------------------------------------------------------------------
+Does not claim website live, CapCut run, chats read, or real-world efficacy.
+Collection and routing artifact for evidence-based continuation.
+================================================================================
