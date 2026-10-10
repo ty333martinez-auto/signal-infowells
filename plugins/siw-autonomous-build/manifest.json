@@ -1,0 +1,11 @@
+{
+  "name": "siw-autonomous-build",
+  "id": "siw-autonomous-build",
+  "version": "0.1.0",
+  "description": "Coordinate bounded framework and marketplace build cycles with automatic quality gates and command-gated promotion.",
+  "pillar": "Execution",
+  "framework": "signal-infowells",
+  "status": "NOT-RUN",
+  "entry": "SKILL.md",
+  "activation": "agent-skill"
+}
