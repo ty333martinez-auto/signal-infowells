@@ -1,0 +1,11 @@
+{
+  "name": "siw-evidence",
+  "id": "siw-evidence",
+  "version": "0.1.0",
+  "description": "Seal observations into digests with provenance. Sealing is not promotion.",
+  "pillar": "Evidence",
+  "framework": "signal-infowells",
+  "status": "NOT-RUN",
+  "entry": "SKILL.md",
+  "activation": "agent-skill"
+}

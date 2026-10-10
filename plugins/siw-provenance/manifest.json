@@ -1,0 +1,11 @@
+{
+  "name": "siw-provenance",
+  "id": "siw-provenance",
+  "version": "0.1.0",
+  "description": "Record chain of custody for claims and changes.",
+  "pillar": "Provenance",
+  "framework": "signal-infowells",
+  "status": "NOT-RUN",
+  "entry": "SKILL.md",
+  "activation": "agent-skill"
+}

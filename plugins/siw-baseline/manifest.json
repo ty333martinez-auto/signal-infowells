@@ -1,0 +1,11 @@
+{
+  "name": "siw-baseline",
+  "id": "siw-baseline",
+  "version": "0.1.0",
+  "description": "Compare current sealed digest against a baseline. Match ≠ promotion.",
+  "pillar": "Evidence",
+  "framework": "signal-infowells",
+  "status": "NOT-RUN",
+  "entry": "SKILL.md",
+  "activation": "agent-skill"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "siw-run-record",
+  "id": "siw-run-record",
+  "version": "0.1.0",
+  "description": "Emit a run-registry-shaped record for an activation cycle.",
+  "pillar": "Provenance",
+  "framework": "signal-infowells",
+  "status": "NOT-RUN",
+  "entry": "SKILL.md",
+  "activation": "agent-skill"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "siw-task-digest",
+  "id": "siw-task-digest",
+  "version": "0.1.0",
+  "description": "Canonical digest of the task description for registry and provenance.",
+  "pillar": "Evidence",
+  "framework": "signal-infowells",
+  "status": "NOT-RUN",
+  "entry": "SKILL.md",
+  "activation": "agent-skill"
+}

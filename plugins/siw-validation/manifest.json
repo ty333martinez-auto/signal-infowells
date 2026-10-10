@@ -1,0 +1,11 @@
+{
+  "name": "siw-validation",
+  "id": "siw-validation",
+  "version": "0.1.0",
+  "description": "Independent validation gate. Never auto-promotes to CONFIRMED.",
+  "pillar": "Validation",
+  "framework": "signal-infowells",
+  "status": "NOT-RUN",
+  "entry": "SKILL.md",
+  "activation": "agent-skill"
+}

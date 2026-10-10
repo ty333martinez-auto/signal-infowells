@@ -1,0 +1,11 @@
+{
+  "name": "siw-execution",
+  "id": "siw-execution",
+  "version": "0.1.0",
+  "description": "Execute under bounded recursive limits. Halting on bounds is correct protocol.",
+  "pillar": "Execution",
+  "framework": "signal-infowells",
+  "status": "NOT-RUN",
+  "entry": "SKILL.md",
+  "activation": "agent-skill"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "siw-recognition",
+  "id": "siw-recognition",
+  "version": "0.1.0",
+  "description": "Surface continuous, unresolved Recognition events. Never treat recognition as finished.",
+  "pillar": "Recognition",
+  "framework": "signal-infowells",
+  "status": "NOT-RUN",
+  "entry": "SKILL.md",
+  "activation": "agent-skill"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "siw-signal",
+  "id": "siw-signal",
+  "version": "0.1.0",
+  "description": "Detect and prioritize candidate signals from a task. Does not rank truth.",
+  "pillar": "Signal",
+  "framework": "signal-infowells",
+  "status": "NOT-RUN",
+  "entry": "SKILL.md",
+  "activation": "agent-skill"
+}

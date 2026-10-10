@@ -1,0 +1,11 @@
+{
+  "name": "siw-status",
+  "id": "siw-status",
+  "version": "0.1.0",
+  "description": "Apply CONFIRMED / NOT-YET-VERIFIED / NOT-RUN without collapsing labels.",
+  "pillar": "Validation",
+  "framework": "signal-infowells",
+  "status": "NOT-RUN",
+  "entry": "SKILL.md",
+  "activation": "agent-skill"
+}

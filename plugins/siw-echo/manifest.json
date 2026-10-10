@@ -1,0 +1,11 @@
+{
+  "name": "siw-echo",
+  "id": "siw-echo",
+  "version": "0.1.0",
+  "description": "Minimal echo skill for marketplace smoke tests.",
+  "pillar": "Execution",
+  "framework": "signal-infowells",
+  "status": "NOT-RUN",
+  "entry": "SKILL.md",
+  "activation": "agent-skill"
+}

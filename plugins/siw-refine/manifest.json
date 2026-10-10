@@ -1,0 +1,11 @@
+{
+  "name": "siw-refine",
+  "id": "siw-refine",
+  "version": "0.1.0",
+  "description": "One bounded refinement proposal. Does not claim real-world improvement.",
+  "pillar": "Execution",
+  "framework": "signal-infowells",
+  "status": "NOT-RUN",
+  "entry": "SKILL.md",
+  "activation": "agent-skill"
+}
