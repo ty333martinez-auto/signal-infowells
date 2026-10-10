@@ -1,0 +1,17 @@
+{
+  "TrailId": "SIW-REFINE-20261010-002",
+  "SeedIntent": "Add measurable, reviewable integrity checks to the independent Signal InfoWells marketplace.",
+  "Disposition": "Hold for independent review",
+  "FinalOutput": "Added marketplace integrity validator, five regression tests, and CI workflow; GitHub Actions passed all tests and catalog validation.",
+  "RetryContext": "No retry required after the first CI run; validation completed successfully.",
+  "HaltReason": "Stop before merge or promotion because independent review has not occurred and runtime integration remains a separate decision.",
+  "EarnedConstraints": [
+    "Marketplace integrity tests prove repository consistency only, not reasoning quality or efficacy.",
+    "Keep the archived scaffold distinct from the current marketplace until an explicit integration plan is validated.",
+    "Keep CONFIRMED, NOT-YET-VERIFIED, and NOT-RUN distinct.",
+    "Recognition remains continuous and unresolved."
+  ],
+  "CycleNumber": 1,
+  "Status": "NOT-YET-VERIFIED",
+  "EvidenceDigest": "6785cac38bd0e7219ebbbbb982cfcf2058abae7d9bb1cb746cdc52da168daafa"
+}

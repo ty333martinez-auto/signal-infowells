@@ -1,0 +1,10 @@
+{
+  "trail_id": "SIW-REFINE-20261010-002",
+  "seed_intent": "Autonomously refine Signal InfoWells in bounded, evidence-backed cycles while preserving framework identity and invariants.",
+  "started_utc": "2026-10-10T07:50:00Z",
+  "subject": "marketplace-integrity-gate",
+  "repository": "https://github.com/ty333martinez-auto/signal-infowells",
+  "base_commit": "5c3abb59034c8dd65baf8822fcdd5dc04c17082c",
+  "branch": "refine/marketplace-integrity-gate-001",
+  "parent_run_id": "SIW-ACT-20261010-001"
+}

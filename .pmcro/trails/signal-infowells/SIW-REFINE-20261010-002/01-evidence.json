@@ -1,0 +1,51 @@
+{
+  "run_id": "SIW-REFINE-20261010-002",
+  "observed_at_utc": "2026-10-10T07:52:06Z",
+  "repository": "https://github.com/ty333martinez-auto/signal-infowells",
+  "base_commit": "5c3abb59034c8dd65baf8822fcdd5dc04c17082c",
+  "resulting_commit": "9e0a187d3ba8df109591a9854e057f55d497cd3d",
+  "ci_merge_commit": "cfc0fecb114647c4c174dbfa1b19ae06c60a37cd",
+  "workflow": {
+    "name": "Marketplace integrity",
+    "run_id": 38035895772,
+    "run_number": 1,
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/ty333martinez-auto/signal-infowells/actions/runs/38035895772"
+  },
+  "commands": [
+    "python -m unittest discover -s tests -v",
+    "python tools/validate_marketplace.py"
+  ],
+  "results": {
+    "unit_tests": {
+      "ran": 5,
+      "passed": 5,
+      "failed": 0
+    },
+    "repository_marketplace_validation": "PASS",
+    "archive_python_scaffold_tests": {
+      "ran": 2,
+      "passed": 2,
+      "failed": 0
+    }
+  },
+  "change_summary": [
+    "Added dependency-free marketplace validator for catalog/plugin paths, SKILL.md frontmatter identity, required invariant keys, and exact registry status vocabulary.",
+    "Added five regression tests for valid catalog, missing SKILL.md, mismatched skill name, duplicate plugin name, and collapsed status enum.",
+    "Added GitHub Actions workflow for regression tests and marketplace validation."
+  ],
+  "baseline": {
+    "repository_had_tests": false,
+    "repository_had_marketplace_integrity_validator": false,
+    "repository_had_ci_for_marketplace_integrity": false
+  },
+  "scope_limitations": [
+    "Tests establish repository/catalog consistency only, not reasoning quality or real-world efficacy.",
+    "CI tested the PR merge ref, not a merged main branch.",
+    "Independent review has not occurred; PR remains draft and unmerged.",
+    "The archived Python scaffold is separate from the current repository and its investigate method returns placeholder output.",
+    "The Windows bundle validator references agents/SIGNAL-INFOWELLS-FIELD-AGENT.md while the project archive contains agents/SIGNAL-INFOWELLS-AGENT.md."
+  ],
+  "status": "NOT-YET-VERIFIED"
+}
