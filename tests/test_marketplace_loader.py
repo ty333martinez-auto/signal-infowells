@@ -11,8 +11,9 @@ class MarketplaceLoaderTests(unittest.TestCase):
     def test_loads_all_catalogued_capabilities(self):
         marketplace = load_marketplace(ROOT)
         self.assertEqual(marketplace.framework, "signal-infowells")
-        self.assertEqual(len(marketplace.capabilities), 13)
+        self.assertEqual(len(marketplace.capabilities), 14)
         self.assertIn("siw-autonomous-build", {item.name for item in marketplace.capabilities})
+        self.assertIn("siw-capcut-intent", {item.name for item in marketplace.capabilities})
 
     def test_exposes_required_invariants(self):
         marketplace = load_marketplace(ROOT)
