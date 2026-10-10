@@ -1,0 +1,18 @@
+{
+  "TrailId": "SIW-ACT-20261010-001",
+  "SeedIntent": "Run a bounded Signal InfoWells activation using the repository's governing instructions and marketplace skills.",
+  "Disposition": "Hold",
+  "FinalOutput": "Repository instructions and all 12 plugin SKILL.md files inspected; bounded activation workflow recorded.",
+  "RetryContext": null,
+  "HaltReason": "Promotion blocked because independent validation is absent; repository code and CI were not executed through this connector workflow.",
+  "EarnedConstraints": [
+    "Signal InfoWells remains an independent marketplace, not a PMCR-O skill.",
+    "Recognition remains continuous and unresolved.",
+    "Process/scaffold checks do not establish real-world efficacy.",
+    "Evidence is sealed with a digest and provenance before any promotion decision.",
+    "No capability is promoted to CONFIRMED."
+  ],
+  "CycleNumber": 1,
+  "Status": "NOT-YET-VERIFIED",
+  "EvidenceDigest": "20cfc747afe8b0a1ff2e18189446bd2264ec7514cfec435ac022dbb248feff05"
+}
