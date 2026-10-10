@@ -1,0 +1,23 @@
+name: signal-infowells-instance
+framework_subject: signal-infowells
+repository: https://github.com/ty333martinez-auto/signal-infowells
+independence: true
+
+trails:
+  root: .pmcro/trails/
+  subject: signal-infowells
+
+marketplace:
+  catalog: marketplace.json
+  plugins_dir: plugins/
+
+governance:
+  siw: .infowells/
+  activation: ACTIVATION.md
+  agents_doc: AGENTS.md
+  handoff: HANDOFF.md
+
+bounds:
+  max_depth: 4
+  max_iterations: 8
+  max_total_steps: 32

@@ -1,0 +1,1 @@
+{"TrailId":"T1-siw-scaffold-001","CycleNumber":1,"Phase":"Check","AllStepsOk":true,"Checks":[{"Name":"marketplace.json","Passed":true},{"Name":"12 plugins","Passed":true},{"Name":"Independent of PMCR-O product","Passed":true}]}

@@ -1,0 +1,13 @@
+{
+  "TrailId": "T1-siw-scaffold-001",
+  "SeedIntent": "Scaffold SIW marketplace; enable PMCR-O loop visibility via .pmcro/",
+  "Disposition": "Accept",
+  "FinalOutput": "Independent SIW marketplace (12 plugins) + .pmcro trail interface",
+  "RetryContext": null,
+  "HaltReason": null,
+  "EarnedConstraints": [
+    "SIW core is skills/plugins marketplace, not a Python package",
+    "PMCR-O may trail SIW work; it does not own SIW identity"
+  ],
+  "CycleNumber": 1
+}
