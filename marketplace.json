@@ -1,8 +1,8 @@
 {
   "name": "signal-infowells",
   "displayName": "Signal InfoWells Marketplace",
-  "description": "Independent activation framework marketplace. Skills/plugins for the six pillars. Not subordinated to PMCR-O or any other system.",
-  "version": "0.1.0",
+  "description": "Independent reasoning and activation framework with an integrated skills marketplace and bounded autonomous build cycle. Not subordinated to PMCR-O or any other system.",
+  "version": "0.2.0",
   "framework": "signal-infowells",
   "status": "NOT-RUN",
   "plugins": [
@@ -13,11 +13,12 @@
     {"name": "siw-validation", "source": "./plugins/siw-validation", "description": "Independent validation gate. Never auto-promotes to CONFIRMED.", "pillar": "Validation"},
     {"name": "siw-provenance", "source": "./plugins/siw-provenance", "description": "Record chain of custody for claims and changes.", "pillar": "Provenance"},
     {"name": "siw-status", "source": "./plugins/siw-status", "description": "Apply CONFIRMED / NOT-YET-VERIFIED / NOT-RUN without collapsing labels.", "pillar": "Validation"},
-    {"name": "siw-baseline", "source": "./plugins/siw-baseline", "description": "Compare current sealed digest against a baseline. Match ≠ promotion.", "pillar": "Evidence"},
+    {"name": "siw-baseline", "source": "./plugins/siw-baseline", "description": "Compare current sealed digest against a baseline. Match does not imply promotion.", "pillar": "Evidence"},
     {"name": "siw-run-record", "source": "./plugins/siw-run-record", "description": "Emit a run-registry-shaped record for an activation cycle.", "pillar": "Provenance"},
     {"name": "siw-refine", "source": "./plugins/siw-refine", "description": "One bounded refinement proposal. Does not claim real-world improvement.", "pillar": "Execution"},
     {"name": "siw-echo", "source": "./plugins/siw-echo", "description": "Minimal echo skill for marketplace smoke tests.", "pillar": "Execution"},
-    {"name": "siw-task-digest", "source": "./plugins/siw-task-digest", "description": "Canonical digest of the task description for registry and provenance.", "pillar": "Evidence"}
+    {"name": "siw-task-digest", "source": "./plugins/siw-task-digest", "description": "Canonical digest of the task description for registry and provenance.", "pillar": "Evidence"},
+    {"name": "siw-autonomous-build", "source": "./plugins/siw-autonomous-build", "description": "Coordinate bounded framework and marketplace build cycles with automatic quality gates and command-gated promotion.", "pillar": "Execution"}
   ],
   "invariants": [
     "no_single_pillar_defines_reality",
