@@ -1,0 +1,34 @@
+{
+  "run_id": "SIW-REFINE-20261010-001",
+  "base_commit": "5c3abb59034c8dd65baf8822fcdd5dc04c17082c",
+  "branch": "refine/siw-validation-gate-001",
+  "target": "plugins/siw-validation/SKILL.md",
+  "status": "NOT-YET-VERIFIED",
+  "cycle": 1,
+  "change": "Strengthen independent-validator separation, digest recomputation, provenance checks, acceptance criteria, and unresolved-question handling; trim content to meet the repository's <500 estimated-token convention.",
+  "checks": {
+    "frontmatter": true,
+    "independent_validator_requirement": true,
+    "digest_recomputation_requirement": true,
+    "distinct_statuses": true,
+    "no_auto_promotion": true,
+    "recognition_unresolved": true,
+    "estimated_token_upper_bound": 456,
+    "budget_limit": 500,
+    "within_budget": true
+  },
+  "test_scope": "Static content assertions and token-budget estimate against fetched branch file. No CI or runtime execution was performed.",
+  "provenance": {
+    "agent_id": "chatgpt-siw-activation-agent",
+    "capability_ids": ["siw-validation", "siw-evidence", "siw-provenance", "siw-run-record"],
+    "parent_run_id": "SIW-ACT-20261010-001",
+    "base_commit": "5c3abb59034c8dd65baf8822fcdd5dc04c17082c",
+    "change_commit": "3a64fde19c40a8ad7b201ccd044d56ea53cce5f1"
+  },
+  "unresolved_questions": [
+    "Independent review of this refinement has not occurred.",
+    "Static checks do not prove runtime correctness or real-world efficacy.",
+    "No CI workflow was executed through the available GitHub connector.",
+    "Recognition remains continuous and unresolved."
+  ]
+}

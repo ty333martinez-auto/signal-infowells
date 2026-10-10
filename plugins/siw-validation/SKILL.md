@@ -9,30 +9,35 @@ framework: signal-infowells
 # Validation Gate
 
 **Pillar:** Validation  
-**Framework:** Signal InfoWells (independent activation marketplace)  
-**Status of this skill package:** NOT-RUN until exercised in a recorded activation
+**Status:** NOT-RUN until exercised in a recorded activation.
 
-## When to use
-Before any promotion decision.
+## Use
+Before any promotion decision or readiness claim.
 
 ## Steps
-1. Check whether independent validation (outside originating path) is present.
-2. Check whether evidence is sealed with digest + provenance.
-3. If either is missing, keep NOT-YET-VERIFIED.
-4. Never set CONFIRMED from the same path that produced the claim.
+1. Identify the claim, acceptance criteria, originating run, producer, and evidence.
+2. Verify validator independence. The validator and path must be separate from the producing path; if unclear, stop and record the gap.
+3. Recompute each evidence digest from canonical content. Check provenance, scope, timestamp, and status; a digest string alone proves neither integrity nor truth.
+4. Test explicit criteria. Record method, results, failures, and limitations. A passing process test does not prove real-world efficacy.
+5. Check for contradictory/missing evidence and unresolved Recognition questions.
+6. If independence, evidence integrity, or required criteria are missing, retain NOT-YET-VERIFIED. If not executed, use NOT-RUN.
+7. Use CONFIRMED only when independent validation is documented, evidence is sealed, and all criteria pass. Never auto-promote.
 
-## Protected invariants (always)
-1. No single pillar defines reality alone.
-2. Recognition is continuous and unresolved.
-3. A successful software/process check is not proof of real-world outcome improvement.
-4. Promotion requires independent validation outside the originating path.
-5. Evidence must be sealed before it can influence promotion.
-6. CONFIRMED / NOT-YET-VERIFIED / NOT-RUN stay distinct.
+## Required output
+- Claim and acceptance criteria
+- Validator/path and independence rationale
+- Digests and provenance checked
+- Tests, results, failures, limitations
+- Conflicts and unresolved questions
+- One status: CONFIRMED / NOT-YET-VERIFIED / NOT-RUN
 
-## Output
-- Structured notes suitable for a run record
-- Explicit status label (default NOT-YET-VERIFIED)
+## Invariants
+- No single pillar defines reality alone.
+- Recognition is continuous and unresolved.
+- Software success is not proof of real-world efficacy.
+- Promotion requires independent validation.
+- Seal evidence before it influences promotion.
+- Never collapse status labels.
 
 ## Non-goals
-- Does not auto-promote to CONFIRMED
-- Does not claim real-world efficacy from process success alone
+Does not auto-promote or treat digest matches as proof of truth.
