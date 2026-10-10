@@ -1,0 +1,3 @@
+# Sealed run records (JSON) will be written here.
+# Each file corresponds to one activation run.
+# Status labels: CONFIRMED | NOT-YET-VERIFIED | NOT-RUN
