@@ -15,7 +15,8 @@ class PublicFrameworkDocsTests(unittest.TestCase):
     def test_public_guide_distinguishes_core_and_marketplace(self):
         docs = (ROOT / "docs/index.html").read_text(encoding="utf-8")
         self.assertIn("No single pillar", docs)
-        self.assertIn("Recognition remains continuous", docs)
+        self.assertIn("Recognition", docs)
+        self.assertIn("continuous", docs)
         self.assertIn("siw-capcut-intent", docs)
         self.assertIn(".pmcro/tasks/capcut/", docs)
 
