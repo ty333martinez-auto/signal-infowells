@@ -1,0 +1,20 @@
+name: siw-capcut-intent
+id: siw-capcut-intent
+framework: signal-infowells
+status: NOT-RUN
+pillar: Execution
+entry: plugins/siw-capcut-intent/SKILL.md
+schema: schemas/capcut_intent.schema.json
+output_directory: .pmcro/tasks/capcut/
+activation_signals:
+  - video_creation
+  - video_editing
+  - reel_or_short
+  - capcut_prompt
+  - timeline_editing
+  - captions_or_transitions_for_video
+external_execution: handoff_only
+bounds:
+  max_depth: 4
+  max_iterations: 8
+  max_total_steps: 32
