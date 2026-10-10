@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signal InfoWells — Activate · Session · Marketplace</title>
+  <meta name="description" content="Independent activation framework. Activate a session, dispatch marketplace skills, trail your work." />
+  <meta name="theme-color" content="#060f0f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #060f0f; --bg-elev: #0a1818; --bg-card: #0d1f1f;
+      --border: #1a3333; --border-glow: #1f4a4a;
+      --teal: #00c9a7; --teal-dim: rgba(0,201,167,0.12); --teal-mid: #2a8a8a;
+      --text: #e6f3f3; --muted: #7a9e9e;
+      --warn: #e6a800; --warn-dim: rgba(230,168,0,0.15);
+      --ok: #3dd68c; --ok-dim: rgba(61,214,140,0.12);
+      --gray: #8b949e; --gray-dim: rgba(139,148,158,0.12);
+      --radius: 14px;
+      --font: "DM Sans", system-ui, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font); background: var(--bg); color: var(--text);
+      line-height: 1.6; min-height: 100vh;
+      background-image:
+        radial-gradient(ellipse 90% 50% at 50% -15%, rgba(0,201,167,0.08), transparent),
+        radial-gradient(ellipse 40% 30% at 100% 80%, rgba(26,107,107,0.12), transparent);
+    }
+    a { color: var(--teal); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+    header { text-align: center; padding: 3rem 0 2.5rem; }
+    .live-pill {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      font-family: var(--mono); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal);
+      background: var(--teal-dim); border: 1px solid rgba(0,201,167,0.35);
+      padding: 0.4rem 0.9rem; border-radius: 999px; margin-bottom: 1.25rem;
+    }
+    .live-pill .dot {
+      width: 7px; height: 7px; background: var(--teal); border-radius: 50%;
+      box-shadow: 0 0 10px var(--teal); animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    header h1 {
+      font-size: clamp(2rem, 5.5vw, 2.9rem); font-weight: 700;
+      letter-spacing: -0.03em; margin-bottom: 0.75rem;
+    }
+    header .lead { color: var(--muted); font-size: 1.1rem; max-width: 34em; margin: 0 auto 1.5rem; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-weight: 600; font-size: 0.92rem; padding: 0.65rem 1.2rem;
+      border-radius: 10px; border: 1px solid transparent;
+      transition: background 0.15s, border-color 0.15s, transform 0.1s;
+    }
+    .btn:hover { text-decoration: none; transform: translateY(-1px); }
+    .btn-primary { background: var(--teal); color: #041010; }
+    .btn-primary:hover { background: #00e0b8; }
+    .btn-ghost { background: transparent; color: var(--text); border-color: var(--border); }
+    .btn-ghost:hover { border-color: var(--teal-mid); background: var(--bg-elev); }
+    section { margin-bottom: 2.25rem; }
+    .section-label {
+      font-family: var(--mono); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal-mid); margin-bottom: 0.85rem;
+    }
+    h2 { font-size: 1.35rem; font-weight: 650; margin-bottom: 0.5rem; }
+    .sub { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.15rem; }
+    .card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.35rem 1.25rem;
+    }
+    .status-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem; }
+    @media (max-width: 640px) { .status-grid { grid-template-columns: 1fr; } }
+    .status-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.15rem 1rem; text-align: center;
+    }
+    .status-card .tag {
+      display: inline-block; font-family: var(--mono); font-size: 0.68rem;
+      font-weight: 700; letter-spacing: 0.04em; padding: 0.28rem 0.55rem;
+      border-radius: 6px; margin-bottom: 0.65rem;
+    }
+    .tag-confirmed { background: var(--ok-dim); color: var(--ok); border: 1px solid rgba(61,214,140,0.3); }
+    .tag-nyv { background: var(--warn-dim); color: var(--warn); border: 1px solid rgba(230,168,0,0.3); }
+    .tag-notrun { background: var(--gray-dim); color: var(--gray); border: 1px solid rgba(139,148,158,0.25); }
+    .status-card p { font-size: 0.85rem; color: var(--muted); }
+    .status-card strong { display: block; color: var(--text); font-size: 0.95rem; margin-bottom: 0.25rem; }
+    .lifecycle { display: flex; flex-direction: column; }
+    .life-step { display: grid; grid-template-columns: 2.5rem 1fr; gap: 0.85rem; }
+    .life-rail { display: flex; flex-direction: column; align-items: center; }
+    .life-num {
+      width: 2rem; height: 2rem; border-radius: 50%; background: var(--bg-elev);
+      border: 2px solid var(--teal-mid); color: var(--teal); font-family: var(--mono);
+      font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; justify-content: center;
+    }
+    .life-line { width: 2px; flex: 1; min-height: 1.25rem; background: var(--border); }
+    .life-step:last-child .life-line { display: none; }
+    .life-body { padding-bottom: 1.1rem; }
+    .life-body h3 { font-size: 0.98rem; font-weight: 600; margin-bottom: 0.15rem; }
+    .life-body p { font-size: 0.88rem; color: var(--muted); }
+    .life-body .plugin {
+      font-family: var(--mono); font-size: 0.72rem; color: var(--teal);
+      background: var(--teal-dim); padding: 0.15rem 0.45rem; border-radius: 4px; margin-left: 0.35rem;
+    }
+    .plugin-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; }
+    .plugin-card {
+      background: var(--bg-elev); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 0.9rem;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .plugin-card:hover { border-color: var(--border-glow); background: var(--bg-card); }
+    .plugin-card .name { font-family: var(--mono); font-size: 0.8rem; font-weight: 600; color: var(--teal); margin-bottom: 0.35rem; }
+    .plugin-card .pillar { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.4rem; }
+    .plugin-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.45; }
+    .session-panel {
+      background: linear-gradient(145deg, var(--bg-card), var(--bg-elev));
+      border: 1px solid var(--border-glow); border-radius: var(--radius);
+      padding: 1.5rem 1.35rem; position: relative; overflow: hidden;
+    }
+    .session-panel::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--teal), transparent);
+    }
+    .code-block {
+      font-family: var(--mono); font-size: 0.78rem; background: var(--bg);
+      border: 1px solid var(--border); border-radius: 10px; padding: 1rem;
+      color: var(--muted); overflow-x: auto; white-space: pre-wrap; margin-top: 1rem; line-height: 1.55;
+    }
+    .code-block .hi { color: var(--teal); }
+    .pillars { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.5rem; }
+    @media (max-width: 720px) { .pillars { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 400px) { .pillars { grid-template-columns: repeat(2, 1fr); } }
+    .pillar-chip {
+      text-align: center; padding: 0.85rem 0.4rem; background: var(--bg-card);
+      border: 1px solid var(--border); border-radius: 10px; font-size: 0.78rem; font-weight: 600;
+    }
+    .pillar-chip span { display: block; font-size: 0.65rem; font-weight: 500; color: var(--muted); margin-top: 0.2rem; }
+    .trail-note {
+      display: flex; gap: 1rem; align-items: flex-start; background: var(--bg-card);
+      border: 1px solid var(--border); border-radius: var(--radius); padding: 1.15rem 1.2rem;
+    }
+    .trail-note .icon {
+      font-family: var(--mono); font-size: 0.7rem; color: var(--teal);
+      background: var(--teal-dim); padding: 0.4rem 0.5rem; border-radius: 6px; flex-shrink: 0;
+    }
+    .trail-note p { font-size: 0.9rem; color: var(--muted); }
+    .trail-note strong { color: var(--text); }
+    footer {
+      text-align: center; color: var(--muted); font-size: 0.82rem;
+      padding: 2rem 0 1rem; border-top: 1px solid var(--border); margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="live-pill"><span class="dot"></span> Independent · Experimental</div>
+      <h1>Signal InfoWells</h1>
+      <p class="lead">Activate a session. Dispatch marketplace skills. Trail every step. A dark, clear surface for building with an independent activation framework.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://github.com/ty333martinez-auto/signal-infowells/blob/main/ACTIVATION.md">Activate session</a>
+        <a class="btn btn-ghost" href="https://github.com/ty333martinez-auto/signal-infowells/blob/main/marketplace.json">Marketplace catalog</a>
+        <a class="btn btn-ghost" href="https://github.com/ty333martinez-auto/signal-infowells">GitHub</a>
+      </div>
+    </header>
+
+    <section>
+      <div class="section-label">Session status labels</div>
+      <h2>Know where every claim stands</h2>
+      <p class="sub">When a user activates a session, every output is labeled. These three never collapse.</p>
+      <div class="status-grid">
+        <div class="status-card">
+          <span class="tag tag-confirmed">CONFIRMED</span>
+          <strong>Sealed &amp; validated</strong>
+          <p>Independent check outside the originating path. Safe to treat as promoted.</p>
+        </div>
+        <div class="status-card">
+          <span class="tag tag-nyv">NOT-YET-VERIFIED</span>
+          <strong>Produced this session</strong>
+          <p>Recorded and sealed, still waiting for independent validation.</p>
+        </div>
+        <div class="status-card">
+          <span class="tag tag-notrun">NOT-RUN</span>
+          <strong>Defined only</strong>
+          <p>Skill or claim exists in the marketplace but has not been exercised.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-label">Activate</div>
+      <div class="session-panel">
+        <h2>Start a session in one paste</h2>
+        <p class="sub" style="margin-bottom:0">Open the repo, paste the activation prompt into any coding agent, then dispatch skills from the marketplace.</p>
+        <div class="code-block"><span class="hi">Activate Signal InfoWells</span>
+Repo: github.com/ty333martinez-auto/signal-infowells
+Read: ACTIVATION.md · AGENTS.md · marketplace.json
+
+Lifecycle: Receive → Signals → Dispatch → Execute → Test → Refine → Record → Validate
+Bounds: depth≤4 · iterations≤8 · steps≤32
+Statuses: CONFIRMED | NOT-YET-VERIFIED | NOT-RUN
+Never auto-promote. Recognition stays continuous.</div>
+        <div class="cta-row" style="margin-top:1.1rem;justify-content:flex-start">
+          <a class="btn btn-primary" href="https://github.com/ty333martinez-auto/signal-infowells/blob/main/ACTIVATION.md">Full activation prompt</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-label">Lifecycle</div>
+      <h2>What happens when a session runs</h2>
+      <p class="sub">Each step maps to marketplace skills the agent can activate.</p>
+      <div class="card">
+        <div class="lifecycle">
+          <div class="life-step"><div class="life-rail"><div class="life-num">1</div><div class="life-line"></div></div><div class="life-body"><h3>Receive task</h3><p>Session opens. Task is the seed.</p></div></div>
+          <div class="life-step"><div class="life-rail"><div class="life-num">2</div><div class="life-line"></div></div><div class="life-body"><h3>Identify signals</h3><p>Surface candidate inputs without ranking truth. <span class="plugin">siw-signal</span></p></div></div>
+          <div class="life-step"><div class="life-rail"><div class="life-num">3</div><div class="life-line"></div></div><div class="life-body"><h3>Dispatch capabilities</h3><p>Pick skills from <span class="plugin">marketplace.json</span></p></div></div>
+          <div class="life-step"><div class="life-rail"><div class="life-num">4</div><div class="life-line"></div></div><div class="life-body"><h3>Execute</h3><p>Bounded action only. Halting on bounds is correct. <span class="plugin">siw-execution</span></p></div></div>
+          <div class="life-step"><div class="life-rail"><div class="life-num">5</div><div class="life-line"></div></div><div class="life-body"><h3>Test</h3><p>Check consistency — not real-world efficacy.</p></div></div>
+          <div class="life-step"><div class="life-rail"><div class="life-num">6</div><div class="life-line"></div></div><div class="life-body"><h3>Refine</h3><p>Iterate inside budget. <span class="plugin">siw-refine</span></p></div></div>
+          <div class="life-step"><div class="life-rail"><div class="life-num">7</div><div class="life-line"></div></div><div class="life-body"><h3>Record</h3><p>Seal evidence and run record. <span class="plugin">siw-evidence</span> <span class="plugin">siw-run-record</span></p></div></div>
+          <div class="life-step"><div class="life-rail"><div class="life-num">8</div><div class="life-line"></div></div><div class="life-body"><h3>Independent validation</h3><p>Required before CONFIRMED. <span class="plugin">siw-validation</span></p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-label">Six pillars</div>
+      <h2>No single pillar defines reality alone</h2>
+      <p class="sub">Recognition remains continuous and unresolved.</p>
+      <div class="pillars">
+        <div class="pillar-chip">Signal<span>detect</span></div>
+        <div class="pillar-chip">Recognition<span>continuous</span></div>
+        <div class="pillar-chip">Evidence<span>seal</span></div>
+        <div class="pillar-chip">Execution<span>bounded</span></div>
+        <div class="pillar-chip">Validation<span>independent</span></div>
+        <div class="pillar-chip">Provenance<span>custody</span></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-label">Marketplace</div>
+      <h2>Skills you can activate</h2>
+      <p class="sub">Twelve plugins. Each is a SKILL.md package — open it, follow the steps, label the output.</p>
+      <div class="plugin-grid">
+        <div class="plugin-card"><div class="name">siw-signal</div><div class="pillar">Signal</div><p>Detect candidate signals from a task.</p></div>
+        <div class="plugin-card"><div class="name">siw-recognition</div><div class="pillar">Recognition</div><p>Surface continuous, unresolved recognition.</p></div>
+        <div class="plugin-card"><div class="name">siw-evidence</div><div class="pillar">Evidence</div><p>Seal observations into digests.</p></div>
+        <div class="plugin-card"><div class="name">siw-execution</div><div class="pillar">Execution</div><p>Run under depth / iteration bounds.</p></div>
+        <div class="plugin-card"><div class="name">siw-validation</div><div class="pillar">Validation</div><p>Gate promotion — never auto-confirm.</p></div>
+        <div class="plugin-card"><div class="name">siw-provenance</div><div class="pillar">Provenance</div><p>Record chain of custody.</p></div>
+        <div class="plugin-card"><div class="name">siw-status</div><div class="pillar">Validation</div><p>Apply status labels without collapsing.</p></div>
+        <div class="plugin-card"><div class="name">siw-baseline</div><div class="pillar">Evidence</div><p>Compare digests to a baseline.</p></div>
+        <div class="plugin-card"><div class="name">siw-run-record</div><div class="pillar">Provenance</div><p>Emit a registry-shaped run record.</p></div>
+        <div class="plugin-card"><div class="name">siw-refine</div><div class="pillar">Execution</div><p>One bounded refinement proposal.</p></div>
+        <div class="plugin-card"><div class="name">siw-echo</div><div class="pillar">Execution</div><p>Smoke-test the dispatch path.</p></div>
+        <div class="plugin-card"><div class="name">siw-task-digest</div><div class="pillar">Evidence</div><p>Canonical task digest for the run.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-label">Session trails</div>
+      <h2>Every cycle can be seen</h2>
+      <div class="trail-note">
+        <div class="icon">.pmcro</div>
+        <div>
+          <p><strong>PMCR-O-compatible trails</strong> live under <code style="color:var(--teal)">.pmcro/trails/signal-infowells/</code> so a colony loop can Plan → Make → Check → Reflect → Seal against this repo.</p>
+          <p style="margin-top:0.5rem">SIW stays independent. The trail is visibility — not ownership.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Signal InfoWells · Experimental · Apache-2.0<br />
+      <a href="https://github.com/ty333martinez-auto/signal-infowells">Repository</a> ·
+      <a href="https://github.com/ty333martinez-auto/signal-infowells/blob/main/ACTIVATION.md">Activation</a> ·
+      Pages: <code style="color:var(--muted)">main</code> / <code style="color:var(--muted)">/docs</code>
+    </footer>
+  </div>
+</body>
+</html>
