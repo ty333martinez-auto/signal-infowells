@@ -1,53 +1,58 @@
 # Signal InfoWells
 
-**Independent Activation Framework & Marketplace**
+**Independent Reasoning Framework + Integrated Skills Marketplace**
 
-Signal InfoWells is a **standalone** activation framework with a **skills/plugins marketplace**.
-You build by activating marketplace skills — not by running a framework Python package.
+Signal InfoWells is the framework. Its marketplace is an integrated capability layer used to dispatch and activate skills under the framework's governance. It is independent of PMCR-O and any other marketplace.
 
-It is **not** subordinated to PMCR-O or any other system. The same generic pattern (skills + plugins + manifests + catalog) is used so agents can activate capabilities; governance and identity are Signal InfoWells.
+The experimental runtime under `src/signal_infowells/` provides a read-only marketplace loader and bounded build-cycle/promotion-gate decisions. Activatable procedures remain in `plugins/*/SKILL.md`; the catalog lives in `marketplace.json`; governance lives in `.infowells/`.
 
-> **Experimental** — Process success is **not** proof of real-world outcome improvement.
+> **Experimental** — Passing software checks is not proof of reasoning quality or real-world outcome improvement.
 
-## How you build with it
+## Autonomous build lifecycle
 
-1. Open this repo (or point an agent at it).
-2. Read **ACTIVATION.md** and paste the activation prompt into your agent.
-3. Dispatch skills from **plugins/** listed in **marketplace.json**.
-4. Follow the activation lifecycle; keep status labels distinct.
-5. Never auto-promote — independent validation required.
+Receive → Identify → Gather → Apply → Test → Resolve → Refine → Record → Validate → Commit → Push → Promotion Gate.
 
-## Six Pillars
+The framework can automatically approve a bounded cycle to continue when its required quality gates pass. That is not the same as independent review, GitHub PR approval, or promotion to `main`.
+
+Promotion to `main` requires an explicit user command for the current change, passing checks on the exact revision, sealed evidence/provenance, independent validation outside the producing path, and compliance with repository permissions and branch protection. When a gate is missing, stop at the working branch/PR and record `NOT-YET-VERIFIED`.
+
+Default execution bounds: depth ≤ 4, iterations ≤ 8, total steps ≤ 32, wall time ≤ 300 seconds. Bounds may only be raised through governance change and independent review.
+
+## Six reasoning pillars
 
 **No single pillar defines reality alone.**
 
-| Pillar | Marketplace plugins |
-|--------|---------------------|
-| **Signal** | `siw-signal` |
-| **Recognition** | `siw-recognition` |
-| **Evidence** | `siw-evidence`, `siw-baseline`, `siw-task-digest` |
-| **Execution** | `siw-execution`, `siw-refine`, `siw-echo` |
-| **Validation** | `siw-validation`, `siw-status` |
-| **Provenance** | `siw-provenance`, `siw-run-record` |
+| Pillar | Examination |
+|---|---|
+| Perception | What is actually here? |
+| Imagination | What else could be possible? |
+| Empathy | What may another person be experiencing or seeing? |
+| Introspection | What is happening within me? |
+| Emotion | What is moving within me, and what might that signal? |
+| Reason | What follows logically, and what does not? |
 
-## Marketplace layout
+Recognition remains continuous and unresolved. The operational marketplace layers (Signal, Recognition, Evidence, Execution, Validation, Provenance) support the framework; they do not replace or redefine the six reasoning pillars.
 
+## Marketplace capabilities
+
+The canonical catalog is `marketplace.json`. Each capability has a `plugins/<name>/SKILL.md` and a manifest. The autonomous-build capability is `siw-autonomous-build`.
+
+## Development checks
+
+Run the dependency-free test suite and marketplace integrity gate:
+
+```sh
+python -m unittest discover -s tests -v
+python tools/validate_marketplace.py
 ```
-marketplace.json           # Catalog of all plugins
-plugins/*/SKILL.md         # Activatable skills
-plugins/*/manifest.json    # Skill metadata
-configs/capabilities/      # YAML pointers
-.infowells/                # Governance
-ACTIVATION.md              # Copy-paste activation prompt
-```
+
+These checks establish only the properties they explicitly test. They do not establish real-world efficacy.
 
 ## Status labels
 
-CONFIRMED | NOT-YET-VERIFIED | NOT-RUN — never collapsed.
+`CONFIRMED` · `NOT-YET-VERIFIED` · `NOT-RUN` — never collapse.
 
 ## GitHub Pages
-
-Settings → Pages → branch `main` → folder `/docs`
 
 https://ty333martinez-auto.github.io/signal-infowells/
 
