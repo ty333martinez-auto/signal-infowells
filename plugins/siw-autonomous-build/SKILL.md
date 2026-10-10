@@ -24,7 +24,8 @@ Build and refine the framework and its marketplace through bounded, evidence-bac
 7. Automatically approve a cycle to continue only when all required gates pass, the evidence digest is sealed, and execution bounds are respected. If a gate fails, record blockers and refine within the remaining budget.
 8. Record the diff, commands, actual results, digest, provenance, status, and unresolved questions.
 9. Commit and push the reviewable branch when repository write access is available.
-10. Promote to main only when the user's command explicitly covers that promotion and the independent-validation gate is satisfied. If either condition is missing, stop at the reviewable branch/PR.
+10. If the task clearly requires video creation or editing, activate `siw-capcut-intent` and emit a portable task JSON under `.pmcro/tasks/capcut/`; do not create CapCut tasks for unrelated work.
+11. Promote to main only when the user's command explicitly covers that promotion and the independent-validation gate is satisfied. If either condition is missing, stop at the reviewable branch/PR.
 
 ## Automatic approval semantics
 - Cycle approval means the automated quality gates permit the build loop to continue.
