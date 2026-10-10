@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://signal-infowells.local/schemas/capcut_intent.schema.json",
+  "title": "Signal InfoWells CapCut Intent Task",
+  "type": "object",
+  "required": ["task_id", "task_type", "framework", "status", "objective", "intent", "portable_prompt", "acceptance_checks", "unresolved_questions", "provenance"],
+  "properties": {
+    "task_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,79}$"},
+    "task_type": {"const": "capcut_intent"},
+    "framework": {"const": "signal-infowells"},
+    "status": {"enum": ["CONFIRMED", "NOT-YET-VERIFIED", "NOT-RUN"]},
+    "created_at": {"type": "string", "format": "date-time"},
+    "objective": {"type": "string", "minLength": 1},
+    "activation": {
+      "type": "object",
+      "required": ["capability", "external_execution", "source_signal"],
+      "properties": {
+        "capability": {"const": "siw-capcut-intent"},
+        "external_execution": {"const": "handoff_only"},
+        "source_signal": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "intent": {
+      "type": "object",
+      "required": ["platform", "audience", "source_assets", "narrative_script", "visual_style", "editing_instructions", "aspect_ratio", "target_duration_seconds", "audio", "captions", "deliverable", "constraints"],
+      "properties": {
+        "platform": {"type": ["string", "null"]},
+        "audience": {"type": ["string", "null"]},
+        "source_assets": {"type": "array", "items": {"type": "object"}},
+        "narrative_script": {"type": ["string", "null"]},
+        "visual_style": {"type": ["string", "null"]},
+        "editing_instructions": {"type": "array", "items": {"type": "string"}},
+        "aspect_ratio": {"type": ["string", "null"]},
+        "target_duration_seconds": {"type": ["integer", "null"], "minimum": 1},
+        "audio": {"type": ["object", "null"]},
+        "captions": {"type": ["object", "null"]},
+        "deliverable": {"type": ["string", "null"]},
+        "constraints": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "portable_prompt": {"type": "string", "minLength": 1},
+    "acceptance_checks": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "unresolved_questions": {"type": "array", "items": {"type": "string"}},
+    "provenance": {
+      "type": "object",
+      "required": ["source_task", "producer", "evidence_note"],
+      "properties": {
+        "source_task": {"type": ["string", "null"]},
+        "producer": {"type": "string"},
+        "evidence_note": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
