@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://signal-infowells.local/schemas/run_registry.schema.json",
+  "title": "Signal InfoWells Run Registry Entry",
+  "type": "object",
+  "required": [
+    "run_id",
+    "timestamp",
+    "task_digest",
+    "status",
+    "depth_reached",
+    "iterations_used",
+    "steps_used",
+    "evidence_digests",
+    "provenance",
+    "unresolved_questions"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "description": "Unique identifier for this activation run"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "task_digest": {
+      "type": "string",
+      "description": "SHA-256 of the canonical task description"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["CONFIRMED", "NOT-YET-VERIFIED", "NOT-RUN"]
+    },
+    "depth_reached": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "iterations_used": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "steps_used": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "halt_reason": {
+      "type": ["string", "null"],
+      "description": "Why execution stopped early, if applicable"
+    },
+    "evidence_digests": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "SHA-256 digests of sealed evidence artifacts"
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["agent_id", "capability_ids", "parent_run_id"],
+      "properties": {
+        "agent_id": { "type": "string" },
+        "capability_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "parent_run_id": { "type": ["string", "null"] },
+        "git_commit": { "type": ["string", "null"] }
+      }
+    },
+    "unresolved_questions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "baseline_comparison": {
+      "type": ["object", "null"],
+      "description": "Optional comparison against a sealed baseline digest"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
