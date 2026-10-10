@@ -1,0 +1,24 @@
+name: Framework and marketplace integrity
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-framework:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run framework and marketplace tests
+        run: python -m unittest discover -s tests -v
+      - name: Validate catalog and capability files
+        run: python tools/validate_marketplace.py
