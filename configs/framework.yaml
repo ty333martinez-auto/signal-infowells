@@ -1,0 +1,34 @@
+# Signal InfoWells — Framework Manifest
+# Status of this config file itself: NOT-RUN (never applied to a live activation)
+
+name: signal-infowells
+version: "0.1.0-scaffold"
+status: NOT-RUN
+
+invariants:
+  - no_single_pillar_defines_reality
+  - recognition_continuous_unresolved
+  - software_test_neq_real_world_efficacy
+  - promotion_requires_independent_validation
+  - evidence_must_be_sealed
+  - status_labels_remain_distinct
+
+bounds:
+  max_depth: 4
+  max_iterations: 8
+  max_total_steps: 32
+  max_wall_time_sec: 300
+
+pillars:
+  - Signal
+  - Recognition
+  - Evidence
+  - Execution
+  - Validation
+  - Provenance
+
+registry:
+  schema: .infowells/registry/run_registry.schema.json
+  path: .infowells/registry/runs/
+
+capabilities_dir: configs/capabilities/
