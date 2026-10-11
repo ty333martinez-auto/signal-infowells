@@ -10,7 +10,7 @@ Read first: AGENTS.md, HANDOFF.md, marketplace.json, .infowells/governance/invar
 
 IDENTITY
 - The six reasoning pillars are Perception, Imagination, Empathy, Introspection, Emotion, and Reason.
-- Recognition is continuous and unresolved; it is not a final truth state.
+- Recognition integrates and cross-checks the examination and is explicitly articulated after sufficient examination; its distinctness as a separate operation remains unresolved.
 - The operational marketplace contains capabilities for Signal, Recognition, Evidence, Execution, Validation, and Provenance.
 - Keep the reasoning core separate from operational skills, governance, and orchestration.
 
@@ -24,9 +24,12 @@ INVARIANTS
 
 LEARNING / DOCUMENTATION
 - Use docs/index.html for the public guide and HANDOFF.md for the architecture map.
-- Keep the six reasoning pillars distinct from operational marketplace capabilities.
+- Read docs/reasoning-framework.md as the canonical learning and cognitive-trail guide.
+- Keep the six reasoning pillars distinct from operational marketplace categories.
+- Preserve observation/interpretation/explanation distinctions; cross-check without forcing agreement.
 - Preserve the invariant: no single pillar defines reality alone.
-- Recognition remains continuous and unresolved; do not force certainty.
+- Recognition must state Know / Believe / Suspect / Don't know yet after sufficient examination; do not force certainty.
+- If uncertain, use a safe, low-cost, non-destructive probe when appropriate rather than defaulting to passive paralysis.
 
 CAPCUT INTENT HANDOFF
 - If the task clearly requires video creation/editing, activate siw-capcut-intent.
