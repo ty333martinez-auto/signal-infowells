@@ -46,7 +46,7 @@ Depth <= 4; iterations <= 8; total steps <= 32; wall time <= 300 seconds. Do not
 - Run tests: python -m unittest discover -s tests -v
 - Run repository integrity: python tools/validate_marketplace.py
 - Changes are NOT-YET-VERIFIED until independently reviewed.
-- Do not self-approve or merge without the promotion gate and the user's explicit command.
+- Never auto-promote. Do not self-approve or merge without the promotion gate and the user's explicit command.
 
 ## Next steps
 1. Inspect CI results on the final PR head.
