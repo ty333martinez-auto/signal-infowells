@@ -1,0 +1,31 @@
+{
+  "run_id": "SIW-DOCS-20261011-001",
+  "timestamp": "2026-10-11T07:45:00Z",
+  "task_digest": "684948682752d4938f49f530fa85133bd71587fe6715fdc490058f5f83b0c9d9",
+  "status": "NOT-YET-VERIFIED",
+  "depth_reached": 1,
+  "iterations_used": 1,
+  "steps_used": 12,
+  "halt_reason": "Canonical framework and documentation changes recorded; final-head CI and independent validation still required. No promotion authorized.",
+  "evidence_digests": [
+    "684948682752d4938f49f530fa85133bd71587fe6715fdc490058f5f83b0c9d9"
+  ],
+  "provenance": {
+    "agent_id": "chatgpt-siw-activation-agent",
+    "capability_ids": [
+      "siw-autonomous-build",
+      "siw-validation",
+      "siw-evidence",
+      "siw-provenance",
+      "siw-run-record"
+    ],
+    "git_commit": "8c44ea5c2ebe04cad5939f5a25c9f7ccfedce1e8"
+  },
+  "unresolved_questions": [
+    "Does Recognition contribute a distinguishable operation beyond the pillar outputs?",
+    "Independent validation of framework efficacy has not occurred.",
+    "The updated final head must pass all required checks before promotion.",
+    "Public Pages changes remain unpublished until main is updated and Pages deploys."
+  ],
+  "notes": "Evidence digest is SHA-256 of canonical JSON (sorted keys, compact separators) for the associated 01-evidence.json payload. The run records documentation integrity intent and expected checks; it does not claim those checks have passed."
+}
