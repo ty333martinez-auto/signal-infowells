@@ -1,0 +1,58 @@
+{
+  "run_id": "SIW-DOCS-20261011-001",
+  "timestamp": "2026-10-11T07:45:00Z",
+  "task_digest": "684948682752d4938f49f530fa85133bd71587fe6715fdc490058f5f83b0c9d9",
+  "status": "NOT-YET-VERIFIED",
+  "depth_reached": 1,
+  "iterations_used": 1,
+  "steps_used": 12,
+  "halt_reason": "Canonical framework and documentation changes recorded; final-head CI and independent validation still required. No promotion authorized.",
+  "evidence_digests": [
+    "684948682752d4938f49f530fa85133bd71587fe6715fdc490058f5f83b0c9d9"
+  ],
+  "provenance": {
+    "agent_id": "chatgpt-siw-activation-agent",
+    "capability_ids": [
+      "siw-autonomous-build",
+      "siw-validation",
+      "siw-evidence",
+      "siw-provenance",
+      "siw-run-record"
+    ],
+    "git_commit": "8c44ea5c2ebe04cad5939f5a25c9f7ccfedce1e8",
+    "latest_documentation_fix_commit": "d8daa9d20c0d1d73d6de053cf408efa039df9ad3"
+  },
+  "unresolved_questions": [
+    "Does Recognition contribute a distinguishable operation beyond the pillar outputs?",
+    "Independent validation of framework efficacy has not occurred.",
+    "The updated final head must pass all required checks before promotion.",
+    "Public Pages changes remain unpublished until main is updated and Pages deploys."
+  ],
+  "notes": "Evidence digest is SHA-256 of canonical JSON (sorted keys, compact separators) for the associated 01-evidence.json payload. The run records documentation integrity intent and expected checks; it does not claim those checks have passed. A test failure identified a missing literal activation invariant and was corrected; final-head checks remain pending. A second documentation assertion was too strict about wording and revealed the same invariant was stated less directly in HANDOFF.md; the explicit phrase was added. Final-head CI is still required. GitHub Actions run 38122297965 passed on exact head db39c9d347b83e350516548b66858b731844bfd4. Independent validation and promotion authorization remain outstanding.",
+  "validation_attempts": [
+    {
+      "run_id": 38122202994,
+      "head_sha": "2974e62edb5c25ea5a4af7ba2716b820a2bbf1f4",
+      "result": "success",
+      "note": "Public documentation and framework regression tests passed at this earlier head; run does not cover subsequent test changes."
+    },
+    {
+      "run_id": 38122251607,
+      "head_sha": "b2885f86350d5c8a568fe44c2a56f0e7ea682c63",
+      "result": "failure",
+      "note": "One documentation test exposed a missing explicit 'Never auto-promote' phrase in ACTIVATION.md. Corrected in 9a4de80b47d4c39714e216d7805c074bd804cccf; final-head validation required."
+    },
+    {
+      "run_id": 38122278597,
+      "head_sha": "5305268865eaf4f6ab6965f11f41c8b1a18b6b4c",
+      "result": "failure",
+      "note": "Documentation test found the handoff lacked the explicit literal 'Never auto-promote' phrase; added in d8daa9d20c0d1d73d6de053cf408efa039df9ad3."
+    },
+    {
+      "run_id": 38122297965,
+      "head_sha": "db39c9d347b83e350516548b66858b731844bfd4",
+      "result": "success",
+      "note": "Exact-head GitHub Actions completed successfully: unit/protocol/documentation tests and marketplace integrity validation passed. This confirms repository checks only, not framework efficacy or independent validation."
+    }
+  ]
+}

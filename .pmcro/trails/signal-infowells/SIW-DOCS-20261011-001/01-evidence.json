@@ -1,0 +1,25 @@
+{
+  "run_id": "SIW-DOCS-20261011-001",
+  "purpose": "Canonicalize the Signal InfoWells reasoning framework and align public documentation with the six-pillar core.",
+  "changes": [
+    "docs/reasoning-framework.md",
+    "README.md",
+    "ACTIVATION.md",
+    "HANDOFF.md",
+    "docs/index.html",
+    "tests/test_public_docs.py"
+  ],
+  "expected_checks": [
+    "unit_tests",
+    "marketplace_integrity",
+    "public_documentation_integrity"
+  ],
+  "invariants": [
+    "no_single_pillar_defines_reality",
+    "recognition_gap_unresolved",
+    "marketplace_categories_are_not_reasoning_pillars",
+    "process_success_is_not_efficacy",
+    "never_auto_promote"
+  ],
+  "status": "NOT-YET-VERIFIED"
+}

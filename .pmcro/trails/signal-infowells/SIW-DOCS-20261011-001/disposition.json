@@ -1,0 +1,14 @@
+{
+  "run_id": "SIW-DOCS-20261011-001",
+  "decision": "HOLD_FOR_VALIDATION",
+  "status": "NOT-YET-VERIFIED",
+  "rationale": "Documentation was updated on a feature branch. No automatic promotion, self-approval, or efficacy claim is authorized.",
+  "gates": {
+    "automated_checks": "PENDING_ON_FINAL_HEAD",
+    "sealed_evidence": "RECORDED",
+    "independent_validation": "PENDING",
+    "user_promotion_command": "NOT_GIVEN",
+    "branch_protection_compliance": "MUST_BE_CHECKED"
+  },
+  "evidence_digest": "684948682752d4938f49f530fa85133bd71587fe6715fdc490058f5f83b0c9d9"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "siw-capcut-intent",
+  "id": "siw-capcut-intent",
+  "version": "0.1.0",
+  "description": "Create portable CapCut video-production intent artifacts and PMCR-O task handoffs.",
+  "pillar": "Execution",
+  "framework": "signal-infowells",
+  "status": "NOT-RUN",
+  "entry": "SKILL.md",
+  "activation": "agent-skill",
+  "schema": "schemas/capcut_intent.schema.json"
+}

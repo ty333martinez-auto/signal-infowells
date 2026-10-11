@@ -1,56 +1,63 @@
 # Signal InfoWells
 
-**Independent Activation Framework & Marketplace**
+**Independent reasoning and activation framework with an integrated skills marketplace.**
 
-Signal InfoWells is a **standalone** activation framework with a **skills/plugins marketplace**.
-You build by activating marketplace skills — not by running a framework Python package.
+Signal InfoWells examines situations through six reasoning pillars, cross-checks their outputs, preserves uncertainty, and supports proportionate action. Marketplace capabilities are operational tools, not additional reasoning pillars.
 
-It is **not** subordinated to PMCR-O or any other system. The same generic pattern (skills + plugins + manifests + catalog) is used so agents can activate capabilities; governance and identity are Signal InfoWells.
+> **Foundational principle:** No single pillar is allowed to define reality alone.  
+> **Status:** Experimental. Passing software checks is not proof of real-world reasoning efficacy.
 
-> **Experimental** — Process success is **not** proof of real-world outcome improvement.
+## Start here
+1. Read the [complete reasoning framework and cognitive trail](docs/reasoning-framework.md).
+2. Read [ACTIVATION.md](ACTIVATION.md) and [HANDOFF.md](HANDOFF.md).
+3. Activate capabilities from [marketplace.json](marketplace.json) by following `plugins/*/SKILL.md`.
 
-## How you build with it
+## The six reasoning pillars
+| Pillar | Core question |
+|---|---|
+| **Perception** | What is actually here and observable? |
+| **Imagination** | What else could be possible? |
+| **Empathy** | What may another person be experiencing or seeing? |
+| **Introspection** | What is happening within me? |
+| **Emotion** | What is moving within me, and what might that signal? |
+| **Reason** | What follows from the evidence and premises? |
 
-1. Open this repo (or point an agent at it).
-2. Read **ACTIVATION.md** and paste the activation prompt into your agent.
-3. Dispatch skills from **plugins/** listed in **marketplace.json**.
-4. Follow the activation lifecycle; keep status labels distinct.
-5. Never auto-promote — independent validation required.
+**Awareness** is foundational, not a seventh pillar. **Recognition** integrates and cross-checks the examination and is explicitly stated after sufficient examination. Whether Recognition is a distinct operation remains unresolved.
 
-## Six Pillars
+## Living cycle
+`Awareness → Six Pillars / Cross-Check → Recognition → Action → Experience → Reflection → Awareness`
 
-**No single pillar defines reality alone.**
+Cross-checking does not require agreement. “Don't know yet” is a valid result.
 
-| Pillar | Marketplace plugins |
-|--------|---------------------|
-| **Signal** | `siw-signal` |
-| **Recognition** | `siw-recognition` |
-| **Evidence** | `siw-evidence`, `siw-baseline`, `siw-task-digest` |
-| **Execution** | `siw-execution`, `siw-refine`, `siw-echo` |
-| **Validation** | `siw-validation`, `siw-status` |
-| **Provenance** | `siw-provenance`, `siw-run-record` |
+## Marketplace is a separate operational layer
+The marketplace registers capabilities across categories such as Signal, Recognition, Evidence, Execution, Validation, and Provenance. These categories do not replace or expand the six reasoning pillars.
 
-## Marketplace layout
+- `marketplace.json` — catalog.
+- `plugins/*/SKILL.md` and `plugins/*/manifest.json` — capability instructions and metadata.
+- `src/signal_infowells/` — read-only marketplace loader and bounded cycle/promotion-gate runtime.
+- `.infowells/` — governance, protocols, and run registry.
+- `.pmcro/trails/signal-infowells/` — PMCR-O-compatible trail; PMCR-O does not own the framework.
+- `docs/reasoning-framework.md` — canonical framework guide.
+- `docs/index.html` — public GitHub Pages guide.
 
-```
-marketplace.json           # Catalog of all plugins
-plugins/*/SKILL.md         # Activatable skills
-plugins/*/manifest.json    # Skill metadata
-configs/capabilities/      # YAML pointers
-.infowells/                # Governance
-ACTIVATION.md              # Copy-paste activation prompt
-```
+## Bounded autonomous build
+`siw-autonomous-build` supports bounded cycles: depth ≤ 4, iterations ≤ 8, steps ≤ 32, wall time ≤ 300 seconds. Automated gates may allow a cycle to continue; they are not independent review, PR approval, or efficacy validation.
+
+Promotion to `main` requires an explicit user command for this change, successful checks on the exact head, sealed evidence/provenance, independent validation, and repository permission/branch-protection compliance. Never auto-promote.
+
+## Conditional CapCut intent
+For tasks that clearly require video production/editing, `siw-capcut-intent` can generate a portable task artifact under `.pmcro/tasks/capcut/`, using `schemas/capcut_intent.schema.json`. Unknowns stay unresolved rather than invented. Intent generation is not a rendered video export.
 
 ## Status labels
+- **CONFIRMED** — independently validated within the stated scope.
+- **NOT-YET-VERIFIED** — produced or recorded, but independent validation is pending.
+- **NOT-RUN** — defined but not exercised.
 
-CONFIRMED | NOT-YET-VERIFIED | NOT-RUN — never collapsed.
+A passed CI run proves only the properties covered by its checks.
 
 ## GitHub Pages
-
-Settings → Pages → branch `main` → folder `/docs`
-
-https://ty333martinez-auto.github.io/signal-infowells/
+https://ty333martinez-auto.github.io/signal-infowells/  
+The public guide is served from `/docs` on `main`; feature-branch changes are not live until promotion.
 
 ## License
-
 Apache-2.0

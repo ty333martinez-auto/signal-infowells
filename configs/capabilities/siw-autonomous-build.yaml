@@ -1,0 +1,14 @@
+name: siw-autonomous-build
+id: siw-autonomous-build
+framework: signal-infowells
+status: NOT-RUN
+pillar: Execution
+entry: plugins/siw-autonomous-build/SKILL.md
+runtime:
+  package: src/signal_infowells
+  protocol: .infowells/protocols/autonomous_build_cycle.md
+bounds:
+  max_depth: 4
+  max_iterations: 8
+  max_total_steps: 32
+  max_wall_time_sec: 300

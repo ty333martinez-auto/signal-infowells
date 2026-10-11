@@ -1,0 +1,30 @@
+{
+  "run_id": "SIW-DOCS-20261011-001",
+  "objective": "Preserve the full current Signal InfoWells reasoning core and cognitive trail in the repository; correct public documentation to distinguish the six reasoning pillars from operational marketplace categories.",
+  "scope": {
+    "branch": "feature/autonomous-build-cycle-001",
+    "paths": [
+      "docs/reasoning-framework.md",
+      "README.md",
+      "ACTIVATION.md",
+      "HANDOFF.md",
+      "docs/index.html",
+      "tests/test_public_docs.py"
+    ]
+  },
+  "bounds": {
+    "depth_max": 4,
+    "iterations_max": 8,
+    "steps_max": 32,
+    "wall_time_seconds_max": 300
+  },
+  "promotion": {
+    "authorized": false,
+    "requires_explicit_user_command": true,
+    "requires_exact_head_checks": true,
+    "requires_sealed_evidence": true,
+    "requires_independent_validation": true,
+    "requires_repository_permissions": true
+  },
+  "status": "NOT-YET-VERIFIED"
+}
