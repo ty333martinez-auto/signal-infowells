@@ -44,7 +44,7 @@ Receive → Identify → Gather → Apply → Test → Resolve → Refine → Re
 AUTO-APPROVAL
 - Auto-approve a cycle to continue only when all required gates pass, evidence is sealed, and bounds are respected.
 - Cycle approval is not independent review, PR approval, or promotion.
-- Never self-approve as an independent validator or bypass branch protection.
+- Never auto-promote. Never self-approve as an independent validator or bypass branch protection.
 
 GIT
 - Work on a named branch; make small commits; push the branch; open/update a PR.
