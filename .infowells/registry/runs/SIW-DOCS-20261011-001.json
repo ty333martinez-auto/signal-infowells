@@ -20,7 +20,7 @@
       "siw-run-record"
     ],
     "git_commit": "8c44ea5c2ebe04cad5939f5a25c9f7ccfedce1e8",
-    "latest_documentation_fix_commit": "9a4de80b47d4c39714e216d7805c074bd804cccf"
+    "latest_documentation_fix_commit": "d8daa9d20c0d1d73d6de053cf408efa039df9ad3"
   },
   "unresolved_questions": [
     "Does Recognition contribute a distinguishable operation beyond the pillar outputs?",
@@ -28,7 +28,7 @@
     "The updated final head must pass all required checks before promotion.",
     "Public Pages changes remain unpublished until main is updated and Pages deploys."
   ],
-  "notes": "Evidence digest is SHA-256 of canonical JSON (sorted keys, compact separators) for the associated 01-evidence.json payload. The run records documentation integrity intent and expected checks; it does not claim those checks have passed. A test failure identified a missing literal activation invariant and was corrected; final-head checks remain pending.",
+  "notes": "Evidence digest is SHA-256 of canonical JSON (sorted keys, compact separators) for the associated 01-evidence.json payload. The run records documentation integrity intent and expected checks; it does not claim those checks have passed. A test failure identified a missing literal activation invariant and was corrected; final-head checks remain pending. A second documentation assertion was too strict about wording and revealed the same invariant was stated less directly in HANDOFF.md; the explicit phrase was added. Final-head CI is still required.",
   "validation_attempts": [
     {
       "run_id": 38122202994,
@@ -41,6 +41,12 @@
       "head_sha": "b2885f86350d5c8a568fe44c2a56f0e7ea682c63",
       "result": "failure",
       "note": "One documentation test exposed a missing explicit 'Never auto-promote' phrase in ACTIVATION.md. Corrected in 9a4de80b47d4c39714e216d7805c074bd804cccf; final-head validation required."
+    },
+    {
+      "run_id": 38122278597,
+      "head_sha": "5305268865eaf4f6ab6965f11f41c8b1a18b6b4c",
+      "result": "failure",
+      "note": "Documentation test found the handoff lacked the explicit literal 'Never auto-promote' phrase; added in d8daa9d20c0d1d73d6de053cf408efa039df9ad3."
     }
   ]
 }
