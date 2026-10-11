@@ -28,7 +28,7 @@
     "The updated final head must pass all required checks before promotion.",
     "Public Pages changes remain unpublished until main is updated and Pages deploys."
   ],
-  "notes": "Evidence digest is SHA-256 of canonical JSON (sorted keys, compact separators) for the associated 01-evidence.json payload. The run records documentation integrity intent and expected checks; it does not claim those checks have passed. A test failure identified a missing literal activation invariant and was corrected; final-head checks remain pending. A second documentation assertion was too strict about wording and revealed the same invariant was stated less directly in HANDOFF.md; the explicit phrase was added. Final-head CI is still required.",
+  "notes": "Evidence digest is SHA-256 of canonical JSON (sorted keys, compact separators) for the associated 01-evidence.json payload. The run records documentation integrity intent and expected checks; it does not claim those checks have passed. A test failure identified a missing literal activation invariant and was corrected; final-head checks remain pending. A second documentation assertion was too strict about wording and revealed the same invariant was stated less directly in HANDOFF.md; the explicit phrase was added. Final-head CI is still required. GitHub Actions run 38122297965 passed on exact head db39c9d347b83e350516548b66858b731844bfd4. Independent validation and promotion authorization remain outstanding.",
   "validation_attempts": [
     {
       "run_id": 38122202994,
@@ -47,6 +47,12 @@
       "head_sha": "5305268865eaf4f6ab6965f11f41c8b1a18b6b4c",
       "result": "failure",
       "note": "Documentation test found the handoff lacked the explicit literal 'Never auto-promote' phrase; added in d8daa9d20c0d1d73d6de053cf408efa039df9ad3."
+    },
+    {
+      "run_id": 38122297965,
+      "head_sha": "db39c9d347b83e350516548b66858b731844bfd4",
+      "result": "success",
+      "note": "Exact-head GitHub Actions completed successfully: unit/protocol/documentation tests and marketplace integrity validation passed. This confirms repository checks only, not framework efficacy or independent validation."
     }
   ]
 }
